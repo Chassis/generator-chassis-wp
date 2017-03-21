@@ -28,7 +28,7 @@ When running the generator, you will be prompted for
 
 ## Options
 
-| Flag             | Usage                          | Description                                                    |
-| ---------------- |------------------------------- | -------------------------------------------------------------- |
-| `--skip-vagrant` | `yo chassis-wp --skip-vagrant` |  Will skip bringing newly created project up via Vagrant.      |
-| `--defaults`     | `yo chassis-wp --defaults`     |  Will skip all options except name and use the saved defaults. |
+| Flag             | Description                                                    |
+| ---------------- | -------------------------------------------------------------- |
+| `--skip-vagrant` |  Will skip bringing newly created project up via Vagrant.      |
+| `--defaults`     |  Will skip all options except name and use the saved defaults. |
