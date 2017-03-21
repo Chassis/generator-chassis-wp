@@ -150,10 +150,12 @@ module.exports = Generator.extend({
       props.safename = slugify( props.name );
 
       // If we're using our defaults, then set those.
-      if ( ! this.options.defaults ) {
-       props.phpVersion = this.config.get('phpVersion');
-       props.multisite  = this.config.get('multisite');
-       props.extensions = this.config.get('extensions');
+      if ( this.options.defaults ) {
+        var prompt_vals = this.config.get( 'promptValues' );
+
+        props.phpVersion = prompt_vals.phpVersion;
+        props.multisite  = prompt_vals.multisite;
+        props.extensions = prompt_vals.extensions;
       }
 
       this.props = props;
