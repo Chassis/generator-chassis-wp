@@ -1,0 +1,22 @@
+# Host remains vagrant.local due to vagrant renaming bug.
+hosts:
+    - vagrant.local
+
+# No multisite.
+multisite: No
+
+# Extensions
+extensions:
+<% extensions.forEach(function (extension) { -%>
+  - <%= extension %>
+<% }) -%>
+
+# PHP Version
+php: <%= phpVersion %>
+
+# Database details
+database:
+    name: wordpress
+    user: wordpress
+    password: vagrantpassword
+    prefix: wp_
