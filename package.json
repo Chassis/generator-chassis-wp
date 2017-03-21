@@ -1,6 +1,6 @@
 {
   "name": "generator-chassis-wp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate a new project with Chassis.",
   "homepage": "https://github.com/bradp/generator-chassis-wp",
   "author": {
