@@ -3,6 +3,7 @@ var Generator = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var slugify = require('underscore.string/slugify');
+var fs = require('fs');
 
 module.exports = Generator.extend({
   prompting: function () {
@@ -160,6 +161,18 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
+
+    // Grab our destination path folder.
+    fs.lstat( this.destinationPath( this.props.safename ), function(err, stats) {
+
+      // If its not an error, but it exists, flag that to the user.
+      if ( ! err && stats.isDirectory() ) {
+        this.log(
+          'A folder named "' + this.props.safename + '" already exists. Please move or rename that folder and re-run the generator.'
+        );
+        process.exit();
+      }
+    }.bind(this));
 
     // Clone chassis from Github.
     this.spawnCommandSync('git', [ 'clone',
