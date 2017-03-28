@@ -151,11 +151,10 @@ module.exports = Generator.extend({
 
       // If we're using our defaults, then set those.
       if ( this.options.defaults ) {
-        var prompt_vals = this.config.get( 'promptValues' );
 
-        props.phpVersion = prompt_vals.phpVersion;
-        props.multisite  = prompt_vals.multisite;
-        props.extensions = prompt_vals.extensions;
+        props.phpVersion = '7.1';
+        props.multisite  = 'No';
+        props.extensions = [];
       }
 
       this.props = props;
@@ -187,7 +186,7 @@ module.exports = Generator.extend({
       this.templatePath('_config.local.yaml'),
       this.destinationPath(this.props.safename + '/config.local.yaml'),
       {
-        name: this.props.name,
+        name:       this.props.name,
         phpVersion: this.props.phpVersion,
         extensions: this.props.extensions
       }
