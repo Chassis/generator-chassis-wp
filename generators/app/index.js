@@ -143,6 +143,10 @@ module.exports = Generator.extend({
         name: 'local-dev',
         value: 'chassis/local-dev',
         checked: false,
+      }, {
+        name: 'VIP-Classic',
+        value: 'stuartshields/chassis-vip-classic',
+        checked: false,
       }]
     }];
 
