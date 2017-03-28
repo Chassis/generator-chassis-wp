@@ -30,12 +30,15 @@ module.exports = Generator.extend({
       name: 'name',
       message: 'What is the name of your project?',
       default: this.appname
-    }, //{
-    //   type: 'input',
-    //   name: 'host',
-    //   message: 'What url would you like to use?',
-    //   default: 'vagrant.local'
-    // },
+    }, {
+      type: 'input',
+      name: 'host',
+      message: 'What url would you like to use?',
+      when: ! this.options.defaults,
+      default: function( p ) {
+        return slugify( p.name ) + '.local';
+      }.bind(this)
+    },
     {
       type: 'list',
       name: 'phpVersion',
@@ -152,6 +155,7 @@ module.exports = Generator.extend({
       // If we're using our defaults, then set those.
       if ( this.options.defaults ) {
 
+        props.host       = slugify( props.name ) + '.local';
         props.phpVersion = '7.1';
         props.multisite  = 'No';
         props.extensions = [];
@@ -187,6 +191,7 @@ module.exports = Generator.extend({
       this.destinationPath(this.props.safename + '/config.local.yaml'),
       {
         name:       this.props.name,
+        host:       this.props.host,
         phpVersion: this.props.phpVersion,
         extensions: this.props.extensions
       }

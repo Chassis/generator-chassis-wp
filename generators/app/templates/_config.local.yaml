@@ -1,6 +1,5 @@
-# Host remains vagrant.local due to vagrant renaming bug.
 hosts:
-    - vagrant.local
+    - <%= host %>
 
 # No multisite.
 multisite: No
