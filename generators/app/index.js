@@ -87,6 +87,18 @@ module.exports = Generator.extend({
         value: 'chassis/phpcs',
         checked: true,
       }, {
+        name: 'phpini',
+        value: 'chassis/phpini',
+        checked: true,
+      }, {
+        name: 'yarn',
+        value: 'chassis/yarn',
+        checked: true,
+      }, {
+        name: 'MariaDB',
+        value: 'chassis/MariaDB',
+        checked: true,
+      }, {
         name: 'nodejs',
         value: 'chassis/nodejs',
         checked: true,
