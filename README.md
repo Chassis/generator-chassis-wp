@@ -15,6 +15,12 @@ Then generate your new project and follow the prompts.
 ```bash
 yo chassis-wp
 ```
+
+You can also bypass installing the packages globally and start the generator in a single command by using npm 5's [npx](https://www.npmjs.com/package/npx) command
+```bash
+npx -p yo -p generator-chassis-wp -c yo chassis-wp
+```
+
 ## What happens during installation?
 
 When running the generator, you will be prompted for
