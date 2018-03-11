@@ -52,7 +52,8 @@ module.exports = Generator.extend({
         '5.5',
         '5.6',
         '7.0',
-        '7.1'
+        '7.1',
+        '7.2'
       ]
     }, {
       type: 'list',
